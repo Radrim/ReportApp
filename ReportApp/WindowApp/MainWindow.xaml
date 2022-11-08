@@ -8,14 +8,20 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <ListView Name="ListDAta">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <UniformGrid Grid.Column="6">
-                        <StackPanel>
-                            <TextBlock Text="{Binding Name}"></TextBlock>
-                        </StackPanel>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="5" Rows="2">
                     </UniformGrid>
-                    
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel>
+                        <TextBlock Text="{Binding Student.Name}"></TextBlock>
+                        <TextBlock Text="{Binding Student.Group_Number}"></TextBlock>
+                        <TextBlock Text="{Binding DayInfo.Date}"></TextBlock>
+                        <CheckBox IsChecked="{Binding Presence}" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"></CheckBox>
+                    </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

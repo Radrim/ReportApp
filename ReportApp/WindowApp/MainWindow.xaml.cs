@@ -21,11 +21,15 @@ namespace ReportApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public static ReportEntities Connection = new ReportEntities();
         public MainWindow()
         {
             InitializeComponent();
-            ListDAta.ItemsSource = DBConnection.Connection.Student.ToList();
+            ListDAta.ItemsSource = DBConnection.Connection.ReportPage.ToList();
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            DBConnection.Connection.SaveChanges();
         }
     }
 }
