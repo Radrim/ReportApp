@@ -10,7 +10,7 @@
         <ListView Name="ListDAta">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Columns="5" Rows="2">
+                    <UniformGrid Columns="6">
                     </UniformGrid>
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
@@ -20,6 +20,7 @@
                         <TextBlock Text="{Binding Student.Name}"></TextBlock>
                         <TextBlock Text="{Binding Student.Group_Number}"></TextBlock>
                         <TextBlock Text="{Binding DayInfo.Date}"></TextBlock>
+                        <TextBlock Text="{Binding DayInfo.Title}"></TextBlock>
                         <CheckBox IsChecked="{Binding Presence}" Checked="CheckBox_Checked" Unchecked="CheckBox_Checked"></CheckBox>
                     </StackPanel>
                 </DataTemplate>
